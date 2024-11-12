@@ -1,0 +1,15 @@
+<h1>Resultados da pesquisa por "{{ query }}"</h1>
+
+{% if results %}
+    <ul>
+        {% for dish in results %}
+            <li>
+                <h3>{{ dish.name }}</h3>
+                <p>{{ dish.description }}</p>
+                <img src="{{ dish.image.url }}" alt="{{ dish.name }}" width="150">
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Nada encontrado.</p>
+{% endif %}

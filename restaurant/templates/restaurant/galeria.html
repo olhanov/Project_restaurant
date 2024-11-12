@@ -1,0 +1,174 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patio Santa Luzia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'restaurant/css/galeria.css' %}">
+</head>
+<body class="fade-in">
+   <!-- Top Bar -->
+   <div class="top-bar">
+        <div class="info">
+            <svg class="icon" width="20" height="21"><path d="..." fill="#FFF8EE"/></svg>
+            <span>7.00 AM - 20.00 PM</span>
+            <svg class="icon" width="20" height="21"><path d="..." fill="#FFF8EE"/></svg>
+            <a class="phone-link" href="tel:229480089">229 480 089</a>
+        </div>
+        <form method="get" action="{% url 'search' %}" class="search-form">
+            <div class="search-input-wrapper">
+                <input type="text" name="q" placeholder="pesquisar..." required>
+                <span class="search-icon">
+                    <!-- This is an SVG icon for the search symbol -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.415l-3.85-3.85a1.007 1.007 0 0 0-.115-.098zm-5.242.656a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z"/>
+                    </svg>
+                </span>
+            </div>
+        </form>
+    </div>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">
+            <img src="{% static 'restaurant/galeria/logo.svg' %}" alt="Лого">
+        </div>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a class="inicio" href="{% url 'index' %}">INICIO</a></li>
+                <li><a href="{% url 'sobre-nos' %}">SOBRE NÓS</a></li>
+                <li><a href="{% url 'menu' %}">MENU</a></li>
+                <li><a href="{% url 'galeria' %}">GALERIA</a></li>
+                <li><a href="{% url 'contactos' %}">CONTACTOS</a></li>
+                <li><a href="./reserva.html">RESERVAS</a></li>
+                <li><a class="pedido-online" href="pedido-online.html">PEDIDO ONLINE</a></li>
+                <li><img src="{% static 'restaurant/galeria/Frame 1000001869.svg' %}" alt="Іконка"></li>
+                <li><a class="login-button" href="{% url 'my_account' %}">LOG IN</a></li>
+            </ul>
+        </nav>
+
+        <div class="hero-content">
+            <h1>GALERIA</h1>
+            <h2>Experimente a mistura perfeita entre arte culinária e hospitalidade calorosa no Pátio Santa Luzia.</h2>
+        </div>
+
+        <video autoplay loop muted class="background-video">
+            <source src="{% static 'restaurant/galeria/230110_02_Love_4k_018_1080p_12000br.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
+    </header>
+
+     <!-- Gallery Section -->
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="gallery-container">
+            {% for image in images %}
+            <div class="gallery-item">
+                <img src="{{ image.image.url }}" alt="{{ image.title }}" class="gallery-image" data-description="{{ image.description }}">
+                <div class="gallery-overlay">
+                    <h3>{{ image.title }}</h3>
+                    <p>{{ image.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+   
+
+    <!-- Reservation Section -->
+    <section class="reservation-section">
+        <h1>Fazer uma reserva</h1>
+        <h2>Entre em contato com o restaurante</h2>
+        <form id="reservationForm" method="post" action="{% url 'reservation' %}">
+            {% csrf_token %}
+            <div class="reservation-form">
+                <input type="date" id="date" name="date" required>
+                <input type="time" id="time" name="time" required>
+                <input type="number" id="people" name="people" placeholder="Número de pessoas" required>
+            </div>
+            <button type="submit" id="reserveButton">Reservar agora</button>
+        </form>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <p>A mesa esta reservada! Esperamos na sua visita!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Section -->
+    <section class="custom-section">
+        <div class="section-overlay">
+            <h1>Registre-se <span class="text-color-one">grátis</span></h1>
+            <h2>Registre-se conosco e concorra pontos de desconto incríveis em reservas de mesa</h2>
+            <a href="./my_account.html" class="button">Fazer registro</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-container">
+            <div class="contact-info">
+                <p class="pao-quente">PÃO QUENTE</p>
+                <p>Horário<br>Segunda a Sexta: 7:00 às 20:00<br>Sábados: 7:00 às 19:00<br>Domingos e Feriados: 8:00 às 19:00</p>
+                <a class="phone-link" href="tel:229480089">229 480 089</a>
+            </div>
+            <div class="contact-info">
+                <p class="pao-quente">RESTAURANTE</p>
+                <p>Horário<br>Segunda: (Descanso semanal)<br>Terça a Sábado: 12:00 às 15:00 e das 18:30 às 22:30<br>Domingo: 12:00 às 15:00</p>
+                <a href="mailto:geral@patiosantaluzia.pt">geral@patiosantaluzia.pt</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>Patiosantaluzia.pt | All rights reserved</p>
+    </footer>
+
+    <!-- JavaScript Section -->
+    <script>
+    
+
+    // Reservation Form Script
+    document.getElementById('reservationForm').onsubmit = function(event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+
+        fetch("{% url 'reservation' %}", {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': '{{ csrf_token }}'
+            },
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                document.getElementById('modal').style.display = "block";
+            } else {
+                alert("Помилка: " + data.errors);
+            }
+        })
+        .catch(error => {
+            console.error('Помилка під час бронювання:', error);
+        });
+    };
+
+    function closeModal() {
+        document.getElementById('modal').style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == document.getElementById('modal')) {
+            closeModal();
+        }
+    };
+    </script>
+</body>
+</html>

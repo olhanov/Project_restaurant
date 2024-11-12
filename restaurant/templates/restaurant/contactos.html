@@ -1,0 +1,374 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    
+
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'restaurant/css/contactos.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patio Santa Luzia</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+</head>
+<body class="fade-in">
+    
+   <div class="top-bar">
+        <div class="info">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"> <path d="M10 0C4.5 0 0 4.64467 0 10.3215C0 15.9983 4.5 20.643 10 20.643C15.5 20.643 20 15.9983 20 10.3215C20 4.64467 15.5 0 10 0ZM14.2 14.6565L9 11.3536V5.16074H10.5V10.5279L15 13.3147L14.2 14.6565Z" fill="#FFF8EE"/> </svg>
+            <span>7.00 AM - 20.00 PM</span>
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"> <path d="M4.02222 8.93382C5.62222 12.1794 8.2 14.8285 11.3444 16.4914L13.7889 13.9684C14.0889 13.6588 14.5333 13.5556 14.9222 13.6932C16.1667 14.1175 17.5111 14.3469 18.8889 14.3469C19.5 14.3469 20 14.8629 20 15.4937V19.4961C20 20.1269 19.5 20.643 18.8889 20.643C8.45556 20.643 0 11.9156 0 1.14683C0 0.516074 0.5 0 1.11111 0H5C5.61111 0 6.11111 0.516074 6.11111 1.14683C6.11111 2.58037 6.33333 3.95657 6.74444 5.24102C6.86667 5.64241 6.77778 6.08968 6.46667 6.41079L4.02222 8.93382Z" fill="#FFF8EE"/> </svg>
+            <a class="phone-link"  href="tel:229480089">229 480 089</a>
+        </div>
+        <form method="get" action="{% url 'search' %}" class="search-form">
+            <div class="search-input-wrapper">
+                <input type="text" name="q" placeholder="pesquisar..." required>
+                <span class="search-icon">
+                    <!-- This is an SVG icon for the search symbol -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.415l-3.85-3.85a1.007 1.007 0 0 0-.115-.098zm-5.242.656a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z"/>
+                    </svg>
+                </span>
+            </div>
+        </form>
+    </div>
+    
+    <header class="header">
+        <img src="{% static 'restaurant/contactos/contactos.svg' %}" alt="Background Image" class="header-background">
+        <div class="logo">
+            <img src="{% static 'restaurant/contactos/logo.svg' %}" alt="Лого">
+        </div>
+        <nav class="nav">
+            <ul class="nav-list">
+                
+                <li>
+                    <a class="inicio" href="{% url 'index' %}">INICIO</a>
+                </li>
+                <li>
+                    <a href="{% url 'sobre-nos' %}">SOBRE NÓS</a>
+                </li>
+                <li>
+                    <a href="{% url 'menu' %}">MENU</a>
+                </li>
+                <li>
+                    <a href="{% url 'galeria' %}">GALERIA</a>
+                </li>
+                <li>
+                    <a href="{% url 'contactos' %}">CONTACTOS</a>
+                </li>
+                <li>
+                    <a href="./reserva.html">RESERVAS</a>
+                </li>
+                <li>
+                    <a class="pedido-online" href="./pedido-online.html">PEDIDO ONLINE</a>
+                </li>
+                <li>
+                    
+                <img src="{% static 'restaurant/sobre-nos/Frame 1000001869.svg' %}" alt="Опис іконки">  
+                </li>
+                <li>
+                    <a class="login-button" href="{% url 'my_account' %}">LOG IN</a>
+                </li>
+                
+            </ul>
+            
+        </nav>
+
+        <div class="hero-content">
+            <h1>CONTACTOS</h1>
+            <h2>Aguardamos a sua visita!</h2>
+        </div>
+            
+    </header> 
+    
+    
+    <section class="contact-section">
+    <div class="contact-container">
+        <div class="contact-info">
+            <p class="pao-quente">PÃO QUENTE</p>
+            <p>Horário <br>
+                Segunda a Sexta: 7:00 às 20:00 <br>
+                Sábados: 7:00 às 19:00 <br>
+                Domingos e Feriados: 8:00 às 19:00</p>
+            <div class="contact-item">
+               <svg class="contact-icon"  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M20.6981 15.1995L16.2713 13.2185C16.0996 13.1443 15.9122 13.1139 15.726 13.1303C15.5397 13.1467 15.3604 13.2092 15.2044 13.3123C15.1919 13.3202 15.18 13.329 15.1688 13.3385L12.8438 15.3204C12.792 15.352 12.7333 15.3703 12.6728 15.3737C12.6123 15.3771 12.5519 15.3656 12.4969 15.3401C10.9744 14.6051 9.39845 13.0413 8.66345 11.5367C8.63745 11.4821 8.62538 11.4219 8.62832 11.3616C8.63127 11.3012 8.64914 11.2425 8.68032 11.1907L10.6678 8.82729C10.6772 8.81604 10.6856 8.80385 10.6941 8.79166C10.7968 8.63585 10.8592 8.45693 10.8755 8.27101C10.8919 8.08509 10.8618 7.89803 10.7878 7.72666L8.80314 3.30729C8.70732 3.08346 8.54148 2.89675 8.33051 2.7752C8.11954 2.65366 7.87483 2.60384 7.63314 2.63322C6.45336 2.78877 5.37054 3.36847 4.58694 4.26404C3.80334 5.15961 3.37254 6.3098 3.37501 7.49979C3.37501 14.7373 9.26251 20.6248 16.5 20.6248C17.69 20.6273 18.8402 20.1965 19.7358 19.4129C20.6313 18.6293 21.211 17.5464 21.3666 16.3667C21.3957 16.1261 21.3464 15.8825 21.226 15.6722C21.1056 15.4619 20.9204 15.2961 20.6981 15.1995ZM20.625 16.2729C20.4926 17.272 20.0009 18.1888 19.2417 18.8517C18.4825 19.5146 17.5079 19.8783 16.5 19.8748C9.67689 19.8748 4.12501 14.3229 4.12501 7.49979C4.12152 6.49192 4.48523 5.51729 5.14813 4.75811C5.81103 3.99893 6.72775 3.50717 7.72689 3.37479C7.74187 3.37386 7.7569 3.37386 7.77189 3.37479C7.84587 3.37542 7.91801 3.39792 7.97923 3.43946C8.04045 3.48099 8.08802 3.53971 8.11595 3.60822L10.095 8.0276C10.1181 8.08161 10.1282 8.1403 10.1244 8.19892C10.1207 8.25754 10.1032 8.31446 10.0734 8.3651L8.08689 10.7276C8.07751 10.7398 8.06814 10.751 8.0597 10.7642C7.95386 10.926 7.89153 11.1124 7.87872 11.3054C7.86591 11.4983 7.90306 11.6913 7.98657 11.8657C8.80126 13.5335 10.4813 15.2014 12.1678 16.016C12.3434 16.099 12.5375 16.1351 12.7312 16.1208C12.9249 16.1065 13.1116 16.0423 13.2731 15.9345L13.3078 15.9082L15.6356 13.9282C15.6854 13.8978 15.7417 13.8796 15.7999 13.8752C15.8581 13.8708 15.9165 13.8803 15.9703 13.9029L20.3963 15.8867C20.471 15.9178 20.5336 15.9722 20.5748 16.0418C20.616 16.1114 20.6336 16.1925 20.625 16.2729Z" fill="#F56607"/>
+                    </svg>
+                <a class="phone-link"  href="tel:229480089">229 480 089 <span>(chamada para a rede fixa nacional)</span></a>
+            </div>
+            <div class="contact-item">
+                <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M4.615 19C4.155 19 3.771 18.846 3.463 18.538C3.15433 18.2293 3 17.845 3 17.385V6.615C3 6.155 3.15433 5.771 3.463 5.463C3.771 5.15433 4.155 5 4.615 5H19.385C19.845 5 20.229 5.15433 20.537 5.463C20.8457 5.771 21 6.155 21 6.615V17.385C21 17.845 20.846 18.229 20.538 18.537C20.2293 18.8457 19.845 19 19.385 19H4.615ZM12 12.115L4 6.885V17.385C4 17.5643 4.05767 17.7117 4.173 17.827C4.28833 17.9423 4.43567 18 4.615 18H19.385C19.5643 18 19.7117 17.9423 19.827 17.827C19.9423 17.7117 20 17.5643 20 17.385V6.885L12 12.115ZM12 11L19.692 6H4.308L12 11ZM4 6.885V6V17.385C4 17.5643 4.05767 17.7117 4.173 17.827C4.28833 17.9423 4.43567 18 4.615 18H4V6.885Z" fill="#F56607"/>
+                    </svg>
+                <a href="mailto:geral@patiosantaluzia.pt">geral@patiosantaluzia.pt</a>
+            </div>
+        </div>
+        <div class="contact-logo">
+            <p class="pao-quente">ENDEREÇO</p>
+               <svg  xmlns="http://www.w3.org/2000/svg" width="12" height="17" viewBox="0 0 12 17" fill="none">
+                  <path d="M5.6 0C2.504 0 0 2.5845 0 5.78003C0 10.1151 5.6 16.5144 5.6 16.5144C5.6 16.5144 11.2 10.1151 11.2 5.78003C11.2 2.5845 8.696 0 5.6 0ZM5.6 7.84433C4.496 7.84433 3.6 6.91953 3.6 5.78003C3.6 4.64054 4.496 3.71574 5.6 3.71574C6.704 3.71574 7.6 4.64054 7.6 5.78003C7.6 6.91953 6.704 7.84433 5.6 7.84433Z" fill="#F56607"/>
+              </svg>
+            <a href="https://maps.app.goo.gl/vjobqiGUL65ZmYmRA">28 Rua Ponte De Moreira, 10, 26, Maia, Porto, 4470-641 Porto</a>
+           
+        </div>
+        <div class="contact-info">
+            <!-- Такий же вміст, як і в першому контейнері contact-info -->
+            <p class="pao-quente">RESTAURANTE</p>
+            <p>Horário <br>
+                Segunda: (Descanso semanal) <br>
+                Terça a Sábado: 12:00 às 15:00 e das 18:30 às 22:30 <br>
+                Domingo: 12:00 às 15:00</p>
+            <div class="contact-item">
+               <svg class="contact-icon"  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M20.6981 15.1995L16.2713 13.2185C16.0996 13.1443 15.9122 13.1139 15.726 13.1303C15.5397 13.1467 15.3604 13.2092 15.2044 13.3123C15.1919 13.3202 15.18 13.329 15.1688 13.3385L12.8438 15.3204C12.792 15.352 12.7333 15.3703 12.6728 15.3737C12.6123 15.3771 12.5519 15.3656 12.4969 15.3401C10.9744 14.6051 9.39845 13.0413 8.66345 11.5367C8.63745 11.4821 8.62538 11.4219 8.62832 11.3616C8.63127 11.3012 8.64914 11.2425 8.68032 11.1907L10.6678 8.82729C10.6772 8.81604 10.6856 8.80385 10.6941 8.79166C10.7968 8.63585 10.8592 8.45693 10.8755 8.27101C10.8919 8.08509 10.8618 7.89803 10.7878 7.72666L8.80314 3.30729C8.70732 3.08346 8.54148 2.89675 8.33051 2.7752C8.11954 2.65366 7.87483 2.60384 7.63314 2.63322C6.45336 2.78877 5.37054 3.36847 4.58694 4.26404C3.80334 5.15961 3.37254 6.3098 3.37501 7.49979C3.37501 14.7373 9.26251 20.6248 16.5 20.6248C17.69 20.6273 18.8402 20.1965 19.7358 19.4129C20.6313 18.6293 21.211 17.5464 21.3666 16.3667C21.3957 16.1261 21.3464 15.8825 21.226 15.6722C21.1056 15.4619 20.9204 15.2961 20.6981 15.1995ZM20.625 16.2729C20.4926 17.272 20.0009 18.1888 19.2417 18.8517C18.4825 19.5146 17.5079 19.8783 16.5 19.8748C9.67689 19.8748 4.12501 14.3229 4.12501 7.49979C4.12152 6.49192 4.48523 5.51729 5.14813 4.75811C5.81103 3.99893 6.72775 3.50717 7.72689 3.37479C7.74187 3.37386 7.7569 3.37386 7.77189 3.37479C7.84587 3.37542 7.91801 3.39792 7.97923 3.43946C8.04045 3.48099 8.08802 3.53971 8.11595 3.60822L10.095 8.0276C10.1181 8.08161 10.1282 8.1403 10.1244 8.19892C10.1207 8.25754 10.1032 8.31446 10.0734 8.3651L8.08689 10.7276C8.07751 10.7398 8.06814 10.751 8.0597 10.7642C7.95386 10.926 7.89153 11.1124 7.87872 11.3054C7.86591 11.4983 7.90306 11.6913 7.98657 11.8657C8.80126 13.5335 10.4813 15.2014 12.1678 16.016C12.3434 16.099 12.5375 16.1351 12.7312 16.1208C12.9249 16.1065 13.1116 16.0423 13.2731 15.9345L13.3078 15.9082L15.6356 13.9282C15.6854 13.8978 15.7417 13.8796 15.7999 13.8752C15.8581 13.8708 15.9165 13.8803 15.9703 13.9029L20.3963 15.8867C20.471 15.9178 20.5336 15.9722 20.5748 16.0418C20.616 16.1114 20.6336 16.1925 20.625 16.2729Z" fill="#F56607"/>
+                    </svg>
+                <a class="phone-link"  href="tel:229440420">229 440 420 <span>(chamada para a rede fixa nacional)</span></a>
+            </div>
+            <div class="contact-item">
+                <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M4.615 19C4.155 19 3.771 18.846 3.463 18.538C3.15433 18.2293 3 17.845 3 17.385V6.615C3 6.155 3.15433 5.771 3.463 5.463C3.771 5.15433 4.155 5 4.615 5H19.385C19.845 5 20.229 5.15433 20.537 5.463C20.8457 5.771 21 6.155 21 6.615V17.385C21 17.845 20.846 18.229 20.538 18.537C20.2293 18.8457 19.845 19 19.385 19H4.615ZM12 12.115L4 6.885V17.385C4 17.5643 4.05767 17.7117 4.173 17.827C4.28833 17.9423 4.43567 18 4.615 18H19.385C19.5643 18 19.7117 17.9423 19.827 17.827C19.9423 17.7117 20 17.5643 20 17.385V6.885L12 12.115ZM12 11L19.692 6H4.308L12 11ZM4 6.885V6V17.385C4 17.5643 4.05767 17.7117 4.173 17.827C4.28833 17.9423 4.43567 18 4.615 18H4V6.885Z" fill="#F56607"/>
+                    </svg>
+                <a href="mailto:geral@patiosantaluzia.pt">geral@patiosantaluzia.pt</a>
+            </div>
+        </div>
+    </div>
+    <div class="links-contact-section">
+
+ 
+
+    <div class="map-parallax-wrapper">
+        <div class="map-parallax-background">
+            <img src="{% static 'restaurant/contactos/contactos.svg' %}" alt="Background Image" class="parallax-image">
+        </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d445.9852014541055!2d-8.648076587008035!3d41.238790380129316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2467cd9adc2c19%3A0xae4abcedc748400f!2sP%C3%A1tio%20Santa%20Luzia!5e0!3m2!1sru!2spt!4v1706198434869!5m2!1sru!2spt" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+
+
+
+
+    <section class="input-section" style="margin-top: 80px; margin-bottom: 80px;">
+        <div class="icon-container">
+            <a href="https://www.facebook.com/patiosantaluzia"><img src="{% static 'restaurant/sobre-nos/Vector insta.svg' %}" height="24px" alt="Icon 1"></a>
+            <a href="https://www.instagram.com/patiosantaluzia/"><img src="{% static 'restaurant/sobre-nos/Vector facebook.svg' %}" height="24px" alt="Icon 2"></a>
+            <a href="https://www.tripadvisor.pt/Restaurant_Review-g1066093-d11711277-Reviews-Patio_santa_luzia-Maia_Porto_District_Northern_Portugal.html"><img src="{% static 'restaurant/sobre-nos/vector tripadvisor.svg' %}" height="24px" alt="Icon 3"></a>
+        </div>
+
+        <p class="center-text">Estamos abertos ao seu feedback e opinião!</p>
+        <p class="center-text-1">Se você tiver alguma dúvida, sugestão ou oferta comercial, não hesite em nos contatar pela forma adequada. </p>
+
+       <form method="post">
+        {% csrf_token %}
+        <div class="contact-form-container">
+            <div class="input-fields">
+                {{ form.name.label_tag }}
+                {{ form.name }}
+                {{ form.email.label_tag }}
+                {{ form.email }}
+                {{ form.phone.label_tag }}
+                {{ form.phone }}
+            </div>
+            <div class="message-field">
+                {{ form.message }}
+            </div>
+        </div>
+        <div class="sub-btn">
+            <button type="submit" class="submit-button">Enviar mensagem</button>
+        </div>
+    </form>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+    {% if success %}
+        <div id="popup" class="popup visible">
+            <p>Obrigado! A mensagem foi enviada!</p>
+            <button id="close-popup" class="close-popup-button">Fechar</button>
+        </div>
+    {% endif %}
+
+    
+    </section>
+
+    
+
+  
+
+
+
+
+
+
+<!-- Нова секція -->
+<section class="reservation-section">
+        <h1>Fazer uma reserva</h1>
+        <h2>Entre em contato com o restaurante</h2>
+        <form id="reservationForm" method="post" action="{% url 'reservation' %}">
+            {% csrf_token %}
+            <div class="reservation-form">
+                <input type="date" id="date" name="date" required>
+                <input type="time" id="time" name="time" required>
+                <input type="number" id="people" name="people" placeholder="Número de pessoas" required>
+            </div>
+            <button type="submit" id="reserveButton">Reservar agora</button>
+        </form>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <p>A mesa esta reservada! Esperamos na sua visita!</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+<section class="custom-section">
+    <div class="section-overlay">
+        <h1> Registre-se  <span class="text-color-one">grátis</span></h1>
+        <h2>Registre-se conosco e concorra
+pontos de desconto incríveis em reservas de mesa</h2>
+        <a href="./my account.html" class="button">Fazer registro</a>
+    </div>
+</section>
+
+
+
+
+
+      
+
+    <div class="additional-info">
+        <div class="language-switcher">
+            <a href="link_to_pt_version">PT</a> /
+            <a href="link_to_en_version">EN</a>
+        </div>
+     </div>
+   
+
+
+<footer class="footer">
+    <p>Patiosantaluzia.pt | All rights reserved</p>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const popup = document.getElementById('popup');
+    const closeButton = document.getElementById('close-popup');
+
+    // Перевірка, чи є сповіщення про успіх, щоб показати попап
+    if (popup && popup.classList.contains('visible')) {
+        popup.classList.add('visible');
+    }
+
+    // Закриття попапу при натисканні на кнопку "Fechar"
+    closeButton.addEventListener('click', function() {
+        popup.classList.remove('visible');
+    });
+});
+</script>
+
+
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+  // Запуск анімації появи при завантаженні сторінки
+  document.body.classList.add('fade-in');
+
+  // Додавання обробника на кліки по всіх посиланнях
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      // Запобігання стандартного переходу по посиланню
+      e.preventDefault();
+      const href = this.getAttribute('href');
+
+      // Запуск анімації зникнення
+      document.body.classList.add('fade-out');
+
+      // Перехід на нову сторінку після завершення анімації
+      setTimeout(() => {
+        window.location.href = href;
+      }, 500); // Час має відповідати тривалості анімації
+    });
+  });
+});
+</script>
+
+<script>
+    
+
+    // Reservation Form Script
+    document.getElementById('reservationForm').onsubmit = function(event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+
+        fetch("{% url 'reservation' %}", {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': '{{ csrf_token }}'
+            },
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                document.getElementById('modal').style.display = "block";
+            } else {
+                alert("Помилка: " + data.errors);
+            }
+        })
+        .catch(error => {
+            console.error('Помилка під час бронювання:', error);
+        });
+    };
+
+    function closeModal() {
+        document.getElementById('modal').style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == document.getElementById('modal')) {
+            closeModal();
+        }
+    };
+    </script>
+
+    <script> 
+      document.addEventListener('scroll', function () {
+    const parallaxImage = document.querySelector('.parallax-image');
+    const scrollPosition = window.pageYOffset;
+    parallaxImage.style.transform = `translateY(${scrollPosition * 0.3}px)`;
+});
+    </script>
+
+
+</body>
+</html>

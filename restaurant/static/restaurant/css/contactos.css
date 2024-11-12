@@ -1,0 +1,736 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.top-bar {
+  height: 35px;
+  background-color: grey;
+  width: 100%; /* Stretches across the full width of the screen */
+  display: flex;
+  align-items: center;
+  position: fixed; /* Keeps the top bar at the top */
+   justify-content: space-between; 
+  top: 0;
+  z-index: 3; /* Ensures the top bar is above all other content */
+}
+
+.top-bar .info {
+  display: flex;
+  align-items: center;
+  padding-left: 80px; /* Distance from left edge to clock icon */
+}
+
+.top-bar .info span,
+.top-bar .info a {
+  font-size: 12px;
+  color: white;
+  text-decoration: none;
+  margin-right: 16px; /* Distance between elements */
+}
+
+.top-bar .info .phone-link {
+  text-decoration: none;
+  color: white;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 16px; /* Distance between icon and text */
+}
+
+.search-form {
+     display: flex;
+     align-items: center;
+     padding-right: 80px;
+}
+
+.search-input-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.search-input-wrapper input[type="text"] {
+    padding-left: 30px; /* Adds space for the icon */
+    font-size: 14px;
+    height: 18px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px; /* Adjusts position of the icon */
+    color: #aaa; /* Color of the icon */
+    pointer-events: none; /* Prevents interaction with the icon */
+}
+
+
+.header {
+   position: relative;
+  width: 100%;
+  padding-top: 0;
+}
+
+.header-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Забезпечує покриття всієї секції */
+  z-index: -1; /* Фонове зображення за текстом та іншими елементами */
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Затемнення 60% */
+}
+
+
+.header-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Забезпечує покриття всієї секції */
+  z-index: -1; /* Фонове зображення за текстом та іншими елементами */
+}
+
+
+
+.logo {
+  position: absolute;
+  top: 70px; /* Відстань від верхнього краю */
+  left: 70px; /* Відстань від лівого краю */
+  z-index: 2; /* Вищий z-index, ніж у затемнення і тексту */
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  top: 60px; /* Margin from the top bar */
+  z-index: 2; /* Ensure nav is above the video */
+}
+
+ul {
+  list-style-type: none;
+}
+.nav-list {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list .pedido-online {
+  margin-right: 300px;
+}
+
+.nav-list .inicio {
+  margin-left: 300px;
+}
+
+.nav a {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  margin-right: 40px;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.nav-list li:last-of-type a {
+  display: flex;
+  margin-left: 40px;
+  margin-right: 80px;
+  align-items: center;
+  background-color: #f56607;
+  border: 2px solid transparent;
+  height: 30px;
+  padding: 0 32px;
+  border-radius: 16px;
+  transition: all 0.25s ease;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Плавний перехід */
+}
+
+.nav-list li:last-of-type a:hover {
+  background-color: transparent; /* Прозорий фон при наведенні */
+  border-color: #f56607; /* Оранжевий колір тексту при наведенні */
+  color: #f56607;
+}
+
+.hero-content {
+  position: relative;
+
+  align-items: center;
+  padding: 230px 80px;
+  color: #fff; /* Колір тексту */
+  z-index: 1; /* Підняти текст над затемненням */
+}
+
+.hero-content h1 {
+  color: #fff;
+  text-align: center;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Montserrat;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 152px; /* 237.5% */
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.hero-content h2 {
+  margin-top: 0;
+  color: #fff;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Montserrat;
+  font-size: 32px;
+  align-items: center;
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 48px; /* 150% */
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between; /* Рівномірне розподілення контейнерів */
+  align-items: flex-start;
+  padding: 80px;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.contact-info p {
+  text-align: left; /* Вирівнювання тексту по лівому краю */
+  /* Стилі для тексту, заголовків, абзаців */
+  color: black;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 171.429% */
+  letter-spacing: 0.3px;
+}
+
+.contact-info p.pao-quente {
+  font-size: 32px;
+  font-style: bold;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  /* Інші стилі */
+}
+
+.contact-item {
+  display: flex;
+  align-items: center; /* Вирівнювання іконки та тексту по центру */
+  gap: 10px; /* Відстань між іконкою та текстом */
+}
+
+.contact-item a {
+  color: black;
+  text-decoration: none;
+}
+
+.contact-logo p {
+  text-align: left; /* Вирівнювання тексту по лівому краю */
+  /* Стилі для тексту, заголовків, абзаців */
+  color: black;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 171.429% */
+  letter-spacing: 0.3px;
+}
+
+.contact-logo p.pao-quente {
+  font-size: 32px;
+  font-style: bold;
+  font-weight: 700;
+  margin-bottom: 24px;
+  /* Інші стилі */
+}
+
+.contact-logo a {
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 24px;
+  /* Інші стилі */
+}
+
+.contact-logo a:hover {
+  color: orangered;
+
+  /* Інші стилі */
+}
+
+.additional-info {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-top: 50px; /* Відступ від попереднього контейнера */
+}
+
+.social-links a {
+  margin-left: 40px; /* Відстань між іконками */
+}
+
+.map-section {
+  width: 100%;
+  height: 630px; /* Висота карти */
+  overflow: hidden; /* Приховуємо будь-яке випадкове переповнення */
+}
+
+.map-parallax-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 450px; /* Висота вашої карти */
+}
+
+.map-parallax-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.parallax-image {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(0); /* Початкове значення трансформації */
+    transition: transform 0.1s linear; /* Зменшений час для більш плавного руху */
+}
+
+
+
+iframe {
+    position: relative;
+    z-index: 1;
+}
+
+
+.icon-container {
+  display: flex;
+
+  justify-content: flex-end;
+  gap: 20px; /* відстань між іконками */
+  margin-right: 80px;
+}
+
+.center-text {
+  text-align: center;
+  margin: 20px 0;
+
+  color: #000;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 30px */
+}
+
+.center-text-1 {
+  text-align: center;
+  margin: 20px 0;
+  color: #000;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 30px */
+}
+
+.input-section {
+  align-items: center;
+  margin: 80px;
+}
+
+.contact-form-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 80px;
+  padding: 40px;
+}
+
+label {
+  display: block; /* Забезпечуємо, що мітка відображається на новому рядку */
+  margin-bottom: 8px; /* Відстань від мітки до інпуту */
+  margin-top: 20px;
+  font-weight: bold; /* Якщо потрібно виділити мітку жирним шрифтом */
+}
+
+.form-container {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.input-fields {
+  display: flex;
+  flex-direction: column;
+
+  flex-basis: 50%;
+}
+
+.input-fields input {
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+}
+
+.message-field {
+  flex-basis: 50%;
+  height: fit-content;
+}
+
+.message-field textarea {
+  width: 100%;
+  height: 300px; /* або висота в залежності від вашого дизайну */
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  resize: none; /* Якщо ви не хочете, щоб користувач міг змінювати розмір */
+}
+
+.sub-btn {
+  display: flex;
+  align-items: center;
+}
+
+.sub-btn .submit-button {
+  display: inline-flex;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  font-size: 16px;
+  border-radius: 16px;
+  background: var(--Main, #f56607);
+  border: 2px solid var(--Main, #f56607);
+  color: var(--3rd-color, #fff8ee);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Стилі для поп-апу */
+.popup {
+  display: none; /* спочатку прихований */
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100; /* вище за інші елементи */
+}
+
+.popup.visible {
+  display: block; /* показує поп-ап */
+}
+
+.reservation-section {
+  text-align: center;
+  padding-top: 100px;
+
+  background-color: var(--EBF0E4, #ebf0e4);
+}
+
+.reservation-section h1 {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 32px;
+  font-style: normal;
+  margin-bottom: 24px;
+  line-height: 150%;
+  text-transform: uppercase;
+  margin-top: 0;
+  text-align: center;
+}
+
+.reservation-section h2 {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.reservation-form {
+  display: flex;
+  justify-content: center;
+  gap: 50px; /* Відстань між інпутами */
+  margin-top: 110px; /* Відступ від попередніх елементів */
+}
+
+.reservation-form input {
+  width: 350px; /* Довжина інпутів */
+  height: 40px;
+  border-radius: 20px;
+  border: 2px solid var(--000000, #000);
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 0 20px;
+
+  /* Можете додати додаткові стилі, наприклад, для бордюру, фону тощо */
+}
+
+#reserveButton {
+  margin-top: 80px;
+  display: inline-flex; /* Блоковий елемент для можливості вирівнювання */
+  margin-left: auto; /* Вирівнювання по правому боці */
+  font-family: Montserrat;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  font-size: 16px;
+  border-radius: 16px;
+  background: var(--Main, #f56607);
+  border: 2px solid var(--Main, #f56607);
+  color: var(--3rd-color, #fff8ee);
+  text-decoration: none;
+  margin-bottom: 80px;
+}
+
+#reserveButton:hover {
+  background-color: transparent; /* Прозорий фон */
+  color: #f56607; /* Оранжевий колір тексту */
+  border-color: #f56607; /* Оранжевий колір рамки */
+}
+
+/* Стилі для модального вікна */
+.modal {
+  display: none; /* Спочатку вікно приховане */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0); /* Чорний фон з прозорістю */
+  background-color: rgba(0, 0, 0, 0.4); /* Чорний фон з прозорістю */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% від верху і по центру */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Ширина вмісту */
+}
+
+.modal-content p {
+  font-size: 16px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.custom-section {
+  position: relative; /* Встановлюємо позиціонування для накладання оверлею */
+  background-image: url("../img/Frame\ 64.png"); /* Шлях до фонового зображення */
+  background-size: cover; /* Зображення покриває весь контейнер */
+  background-position: center; /* Центрування зображення */
+  height: 350px; /* Висота секції */
+}
+
+.section-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7); /* Затемнення фону */
+  backdrop-filter: blur(4px); /* Розмитість фону */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 150px; /* Відступи */
+}
+
+.custom-section h1 {
+  color: white;
+  font-family: Montserrat;
+  font-size: 32px;
+  font-style: normal;
+  margin-bottom: 24px;
+  line-height: 150%;
+  text-transform: uppercase;
+  margin-top: 0;
+  text-align: center;
+}
+
+.custom-section h1 .text-color-one {
+  color: #f56607;
+  font-family: Montserrat;
+  font-size: 32px;
+  font-style: normal;
+  margin-bottom: 24px;
+  line-height: 150%;
+  text-transform: uppercase;
+  margin-top: 0;
+  text-align: center;
+}
+
+.custom-section h2 {
+  color: white;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  text-align: center;
+  margin-bottom: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 400;
+  line-height: 150%; /* 27px */
+}
+
+.custom-section .button {
+  /* Стилі для заголовків та кнопки */
+  text-align: center;
+}
+
+.custom-section .button {
+  display: inline-flex;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  font-size: 16px;
+  border-radius: 16px;
+  background: var(--Main, #f56607);
+  border: 2px solid var(--Main, #f56607);
+  color: var(--3rd-color, #fff8ee);
+  text-decoration: none;
+}
+
+.custom-section .button:hover {
+  background-color: transparent; /* Прозорий фон */
+  color: #f56607; /* Оранжевий колір тексту */
+  border-color: #f56607; /* Оранжевий колір рамки */
+}
+
+.additional-info {
+  background-color: var(--Secondary, #2b2b2b);
+  margin-top: 0;
+}
+
+.language-switcher {
+  margin-left: 100px; /* Стилі для перемикача мов */
+  margin-right: 80px;
+  color: white;
+}
+
+.language-switcher a {
+  text-decoration: none;
+  color: white; /* Колір тексту для посилань */
+  margin-left: 10px;
+  /* Додайте додаткові стилі за потребою */
+}
+
+.footer {
+  display: flex;
+  justify-content: center; /* Центрування вмісту по горизонталі */
+  align-items: center; /* Центрування вмісту по вертикалі */
+  height: 24px; /* Висота футера */
+  background-color: var(--Secondary, #2b2b2b);
+  /* Додайте додаткові стилі за потребою */
+}
+
+.footer p {
+  font-size: 12px; /* Висота шрифту тексту */
+  color: white;
+  margin: 0; /* Видалення стандартних відступів */
+  /* Додайте додаткові стилі за потребою */
+}
+
+/* Анімація зникнення сторінки */
+.fade-out {
+  animation: fadeOut 0.5s ease-out forwards;
+}
+
+/* Анімація появи сторінки */
+.fade-in {
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    visibility: visible;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}

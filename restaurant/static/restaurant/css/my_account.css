@@ -1,0 +1,502 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.top-bar {
+  height: 35px;
+  background-color: grey;
+  width: 100%; /* Stretches across the full width of the screen */
+  display: flex;
+  align-items: center;
+   justify-content: space-between; 
+  position: fixed; /* Keeps the top bar at the top */
+  top: 0;
+  z-index: 3; /* Ensures the top bar is above all other content */
+}
+
+.top-bar .info {
+  display: flex;
+  align-items: center;
+  padding-left: 80px; /* Distance from left edge to clock icon */
+}
+
+.top-bar .info span,
+.top-bar .info a {
+  font-size: 12px;
+  color: white;
+  text-decoration: none;
+  margin-right: 16px; /* Distance between elements */
+}
+
+.top-bar .info .phone-link {
+  text-decoration: none;
+  color: white;
+}
+
+.search-form {
+     display: flex;
+     align-items: center;
+     padding-right: 80px;
+}
+
+.search-input-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.search-input-wrapper input[type="text"] {
+    padding-left: 30px; /* Adds space for the icon */
+    font-size: 14px;
+    height: 18px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px; /* Adjusts position of the icon */
+    color: #aaa; /* Color of the icon */
+    pointer-events: none; /* Prevents interaction with the icon */
+}
+
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 16px; /* Distance between icon and text */
+}
+
+
+.header {
+   position: relative;
+  min-height: 600px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding doesn’t affect the width */
+}
+
+.header-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 600px;
+  object-fit: cover; /* Забезпечує покриття всієї секції */
+  z-index: -1; /* Фонове зображення за текстом та іншими елементами */
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 600px;
+  background-color: rgba(0, 0, 0, 0.6); /* Затемнення 60% */
+}
+
+.logo {
+  position: absolute;
+  top: 70px; /* Відстань від верхнього краю */
+  left: 70px; /* Відстань від лівого краю */
+  z-index: 2; /* Вищий z-index, ніж у затемнення і тексту */
+}
+
+
+
+
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  top: 60px; /* Margin from the top bar */
+  z-index: 2; /* Ensure nav is above the video */
+}
+
+ul {
+  list-style-type: none;
+}
+.nav-list {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list .pedido-online {
+  margin-right: 300px;
+}
+
+.nav-list .inicio {
+  margin-left: 300px;
+}
+
+.nav a {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  margin-right: 40px;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.nav-list li:last-of-type a {
+  display: flex;
+  margin-left: 40px;
+  margin-right: 80px;
+  align-items: center;
+  background-color: #f56607;
+  border: 2px solid transparent;
+  height: 30px;
+  padding: 0 32px;
+  border-radius: 16px;
+  transition: all 0.25s ease;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Плавний перехід */
+}
+
+.nav-list li:last-of-type a:hover {
+  background-color: transparent; /* Прозорий фон при наведенні */
+  border-color: #f56607; /* Оранжевий колір тексту при наведенні */
+  color: #f56607;
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  padding: 230px 80px;
+  color: #fff; /* Колір тексту */
+  z-index: 1; /* Підняти текст над затемненням */
+}
+
+.hero-content h1 {
+  color: #fff;
+
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Montserrat;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 152px; /* 237.5% */
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.messages {
+  margin: 10px 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.messages li {
+  margin-bottom: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.messages .error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.messages .success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Секція для форм логіну і реєстрації */
+.input-section {
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+}
+
+.contact-form-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.contact-form-container {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+
+
+.contact-form-container h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+/* Стиль для інпутів */
+.input-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-fields input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+/* Кнопка відправки форми */
+.submit-button {
+  width: 50%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 16px;
+  background: #f56607;
+  border: 2px solid #f56607;
+  color: white;
+  cursor: pointer;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+
+
+
+
+/* Додаткові стилі */
+.hidden {
+  display: none;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.popup.visible {
+  display: block;
+}
+
+.close-popup-button {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-section {
+  position: relative;
+  background-image: url("../img/Frame\\ 64.png");
+  background-size: cover;
+  background-position: center;
+  height: 350px;
+}
+
+.section-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 150px;
+}
+
+.custom-section h1 {
+  color: white;
+  font-family: Montserrat;
+  font-size: 32px;
+  text-transform: uppercase;
+  margin-top: 0;
+  text-align: center;
+}
+
+.custom-section h1 .text-color-one {
+  color: #f56607;
+}
+
+.custom-section h2 {
+  color: white;
+  font-family: Montserrat;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 8px;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.custom-section .button {
+  display: inline-flex;
+  margin-top: 30px;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  border-radius: 16px;
+  background: #f56607;
+  border: 2px solid #f56607;
+  color: #fff8ee;
+  text-decoration: none;
+}
+
+.custom-section .button:hover {
+  background-color: transparent;
+  color: #f56607;
+  border-color: #f56607;
+}
+
+
+
+.additional-info {
+  background-color: #2b2b2b;
+}
+
+.contact-section {
+  background-color: #2b2b2b;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.contact-info p {
+  text-align: left;
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.contact-info p.pao-quente {
+  font-weight: 700;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-item a {
+  color: #fefefe;
+  text-decoration: none;
+}
+
+.contact-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.cont-logo {
+  width: 240px;
+  height: 90px;
+}
+
+.additional-info {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.social-links a {
+  margin-left: 40px;
+}
+
+.language-switcher {
+  margin-left: 100px;
+  margin-right: 80px;
+  color: white;
+}
+
+.language-switcher a {
+  text-decoration: none;
+  color: white;
+  margin-left: 10px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 24px;
+  background-color: #2b2b2b;
+}
+
+.footer p {
+  font-size: 12px;
+  color: white;
+  margin: 0;
+}
+
+.fade-out {
+  animation: fadeOut 0.5s ease-out forwards;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    visibility: visible;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}

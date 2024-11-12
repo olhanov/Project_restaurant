@@ -1,0 +1,264 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'restaurant/css/menu.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patio Santa Luzia</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</head>
+<body class="fade-in">
+
+   <div class="top-bar">
+        <div class="info">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"> 
+                <path d="M10 0C4.5 0 0 4.64467 0 10.3215C0 15.9983 4.5 20.643 10 20.643C15.5 20.643 20 15.9983 20 10.3215C20 4.64467 15.5 0 10 0ZM14.2 14.6565L9 11.3536V5.16074H10.5V10.5279L15 13.3147L14.2 14.6565Z" fill="#FFF8EE"/> 
+            </svg>
+            <span>7.00 AM - 20.00 PM</span>
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"> 
+                <path d="M4.02222 8.93382C5.62222 12.1794 8.2 14.8285 11.3444 16.4914L13.7889 13.9684C14.0889 13.6588 14.5333 13.5556 14.9222 13.6932C16.1667 14.1175 17.5111 14.3469 18.8889 14.3469C19.5 14.3469 20 14.8629 20 15.4937V19.4961C20 20.1269 19.5 20.643 18.8889 20.643C8.45556 20.643 0 11.9156 0 1.14683C0 0.516074 0.5 0 1.11111 0H5C5.61111 0 6.11111 0.516074 6.11111 1.14683C6.11111 2.58037 6.33333 3.95657 6.74444 5.24102C6.86667 5.64241 6.77778 6.08968 6.46667 6.41079L4.02222 8.93382Z" fill="#FFF8EE"/> 
+            </svg>
+            <a class="phone-link"  href="tel:229480089">229 480 089</a>
+        </div>
+        <form method="get" action="{% url 'search' %}" class="search-form">
+            <div class="search-input-wrapper">
+                <input type="text" name="q" placeholder="pesquisar..." required>
+                <span class="search-icon">
+                    <!-- This is an SVG icon for the search symbol -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.415l-3.85-3.85a1.007 1.007 0 0 0-.115-.098zm-5.242.656a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z"/>
+                    </svg>
+                </span>
+            </div>
+        </form>
+    </div>
+
+    <header class="header">
+        <img src="{% static 'restaurant/menu/Image.jpg' %}" alt="Background Image" class="header-background">
+        <div class="logo">
+            <img src="{% static 'restaurant/menu/logo.svg' %}" alt="Лого">
+        </div>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a class="inicio" href="{% url 'index' %}">INICIO</a></li>
+                <li><a href="{% url 'sobre-nos' %}">SOBRE NÓS</a></li>
+                <li><a href="{% url 'menu' %}">MENU</a></li>
+                <li><a href="{% url 'galeria' %}">GALERIA</a></li>
+                <li><a href="{% url 'contactos' %}">CONTACTOS</a></li>
+                <li><a href="reservas.html">RESERVAS</a></li>
+                <li><a class="pedido-online" href="./pedido-online.html">PEDIDO ONLINE</a></li>
+                <li><img src="{% static 'restaurant/menu/Frame 1000001869.svg' %}" alt="Опис іконки"></li>
+                <li><a class="login-button" href="{% url 'my_account' %}">LOG IN</a></li>
+            </ul>
+        </nav>
+        <div class="hero-content">
+            <h1>VEJA <BR>NOSSO NOVO MENU</h1>
+            <h2>Os ingredientes mais frescos para você todos os dias</h2>
+        </div>
+    </header>    
+
+    <section class="button-section">
+        <a href="#section1" class="section-button"><img src="{% static 'restaurant/menu/icon 1.svg' %}" alt="Icon 1" class="button-icon"><span>ENTRADAS</span></a>
+        <a href="#section2" class="section-button"><img src="{% static 'restaurant/menu/icon 2.svg' %}" alt="Icon 2" class="button-icon"><span>CARNE</span></a>
+        <a href="#section3" class="section-button"><img src="{% static 'restaurant/menu/icon 3.svg' %}" alt="Icon 3" class="button-icon"><span>PEIXE</span></a>
+        <a href="#section4" class="section-button"><img src="{% static 'restaurant/menu/icon 4.svg' %}" alt="Icon 4" class="button-icon"><span>SOBREMESAS</span></a>
+        <a href="#section5" class="section-button"><img src="{% static 'restaurant/menu/icon 5.svg' %}" alt="Icon 5" class="button-icon"><span>BEBIDAS</span></a>
+    </section>
+
+       <!-- Секції на сторінці -->
+    <section id="section1" class="content-section">
+        <h2>-1-</h2>
+        <h1> Entradas</h1>
+        <div class="menu-item">
+            <div class="menu-img">
+                <img src="{% static 'restaurant/menu/menu1.svg' %}" alt="foto food" class="menu-image">
+            </div>
+            <div>
+                {% for item in entradas %}
+                <div class="menu-description">
+                    <h3>{{ item.name }}</h3>
+                    <p>{{ item.description }}</p>
+                    <span class="menu-price">€{{ item.price }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Carne -->
+    <section id="section2" class="content-section-carne">
+        <h2>-2-</h2>
+        <h1>Carne</h1>
+        <div class="menu-item-carne">
+            <div class="menu-descr-carne">
+                {% for item in carne %}
+                <div class="menu-description-carne">
+                    <h3>{{ item.name }}</h3>
+                    <p>{{ item.description }}</p>
+                    <span class="menu-price-carne">€{{ item.price }}</span>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="menu-img-carne">
+                <img src="{% static 'restaurant/menu/carne 1.svg' %}" alt="foto food" class="menu-image-carne">
+                <img src="{% static 'restaurant/menu/carne 2.svg' %}" alt="foto food" class="menu-image-carne">
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Section Peixe -->
+    <section id="section3" class="content-section">
+        <h2>-3-</h2>
+        <h1>Peixe</h1>
+        <div class="menu-item">
+            <div class="menu-img">
+                <img src="{% static 'restaurant/menu/peixe 1.svg' %}" alt="foto food" class="menu-image">
+            </div>
+            <div>
+                {% for item in peixe %}
+                <div class="menu-description">
+                    <h3>{{ item.name }}</h3>
+                    <p>{{ item.description }}</p>
+                    <span class="menu-price">€{{ item.price }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+        <!-- Section Sobremesas -->
+    <section id="section4" class="content-section-sobremesa">
+        <h2>-4-</h2>
+        <h1>Sobremesas</h1>
+        <div class="menu-item-sobremesa">
+            <div class="menu-descr-sobremesa">
+                {% for item in sobremesas %}
+                <div class="menu-description-sobremesa">
+                    <h3>{{ item.name }}</h3>
+                    <p>{{ item.description }}</p>
+                    <span class="menu-price-sobremesa">€{{ item.price }}</span>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="menu-img-sobremesa">
+                <img src="{% static 'restaurant/menu/sobr1.svg' %}" alt="foto food" class="menu-image-sobremesa-1">
+                <img src="{% static 'restaurant/menu/sobr2.svg' %}" alt="foto food" class="menu-image-sobremesa-1">
+                <img src="{% static 'restaurant/menu/sobr3.svg' %}" alt="foto food" class="menu-image-sobremesa-2">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Bebidas -->
+    <section id="section5" class="content-section">
+        <h2>-5-</h2>
+        <h1>Bebidas</h1>
+        <div class="menu-item">
+            <div class="menu-img">
+                <img src="{% static 'restaurant/menu/sobrem.svg' %}" alt="foto food" class="menu-image">
+            </div>
+            <div>
+                {% for item in bebidas %}
+                <div class="menu-description">
+                    <h3>{{ item.name }}</h3>
+                    <p>{{ item.description }}</p>
+                    <span class="menu-price">€{{ item.price }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Reservation -->
+    <section class="reservation-section">
+        <h1>Fazer uma reserva</h1>
+        <h2>Entre em contato com o restaurante</h2>
+
+        <form id="reservationForm" method="post" >
+            {% csrf_token %}
+            <div class="reservation-form">
+                <input type="date" id="date" name="date" required>
+                <input type="time" id="time" name="time" required>
+                <input type="number" id="people" name="people" placeholder="Número de pessoas" required>
+            </div>
+            <button type="submit" id="reserveButton">Reservar agora</button>
+        </form>
+
+        <!-- Modal Window -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>A mesa esta reservada! Esperamos na sua visita!</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Section Registration -->
+    <section class="custom-section">
+        <img src="{% static 'restaurant/menu/Frame 64.png' %}" alt="Ваше зображення" class="section-image" />
+        <div class="section-overlay">
+            <h1>Registre-se <span class="text-color-one">grátis</span></h1>
+            <h2>Registre-se conosco e concorra pontos de desconto incríveis em reservas de mesa</h2>
+            <a href="./my account.html" class="button">Fazer registro</a>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>Patiosantaluzia.pt | All rights reserved</p>
+    </footer>
+
+    <script>
+        document.getElementById('reservationForm').onsubmit = function(event) {
+            event.preventDefault();  // Зупиняє стандартну відправку форми
+
+            // Отримуємо дані з форми
+            var formData = new FormData(this);
+
+            // Виконуємо AJAX-запит
+            fetch("{% url 'reservation' %}", {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}'
+                },
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Показуємо модальне вікно про успішне бронювання
+                    document.getElementById('modal').style.display = "block";
+                } else {
+                    // Виводимо помилки, якщо такі є
+                    alert("Помилка: " + data.errors);
+                }
+            })
+            .catch(error => {
+                console.error('Помилка під час бронювання:', error);
+            });
+        };
+
+        // Закриття модального вікна
+        document.getElementsByClassName('close')[0].onclick = function() {
+            document.getElementById('modal').style.display = "none";
+        }
+
+        // Закриття модального вікна при кліку поза його межами
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('modal')) {
+                document.getElementById('modal').style.display = "none";
+            }
+        }
+    </script>
+
+
+</body>
+</html>

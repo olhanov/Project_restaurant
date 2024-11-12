@@ -1,0 +1,29 @@
+{% extends "admin/change_form.html" %}
+
+{% block extrahead %}
+{{ block.super }}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const userCommentField = document.getElementById("id_user_comment");
+
+        if (userCommentField) {
+            userCommentField.addEventListener("change", function () {
+                const commentId = this.value;
+
+                if (commentId) {
+                    fetch(`/admin/get_user_comment_data/${commentId}/`)
+                        .then((response) => response.json())
+                        .then((data) => {
+                            document.getElementById("id_name").value = data.name;
+                            document.getElementById("id_quote").value = data.comment;
+                            if (data.photo) {
+                                const photoField = document.getElementById("id_photo");
+                                photoField.src = data.photo;
+                            }
+                        });
+                }
+            });
+        }
+    });
+</script>
+{% endblock %}
